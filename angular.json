@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "jv-state-ngrx"
+    }
+  },
+  "defaultProject": "jv-state-ngrx",
+  "cli": {
+    "analytics": "8ad0a537-b7b3-44a5-a392-cb90d96236c2"
+  }
 }
