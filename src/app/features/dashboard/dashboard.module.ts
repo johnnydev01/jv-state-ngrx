@@ -11,6 +11,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { listReducer } from './state/list.reducer';
 import { ListEffects } from './state/list.effects';
+import { ListItemComponent } from './list-item/list-item.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { ListEffects } from './state/list.effects';
     LastTodosComponent,
     CreateTodoComponent,
     ListComponent,
+    ListItemComponent,
   ],
 })
 export class DashboardModule {

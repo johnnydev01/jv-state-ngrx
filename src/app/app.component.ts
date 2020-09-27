@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'jv-state-ngrx';
+
+  get title(): string {
+    return 'JV State NgRx';
+  }
 }
