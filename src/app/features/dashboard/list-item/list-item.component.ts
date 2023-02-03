@@ -11,6 +11,6 @@ import { Todo } from 'src/app/shared/models/todo.model';
 export class ListItemComponent {
 
   @Input() item: Todo;
-  @Output() markAsDone = new EventEmitter<number>();
+  @Output() markAsDone = new EventEmitter();
   @Output() remove = new EventEmitter<number>();
 }

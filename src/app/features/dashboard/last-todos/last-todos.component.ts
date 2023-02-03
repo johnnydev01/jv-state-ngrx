@@ -33,7 +33,9 @@ export class LastTodosComponent implements OnInit {
     this.loading$ = this.store.pipe(select(fromListSelectors.selectListLoading));
   }
 
-  markAsDone(id: number) {
-    
+  //Mesmo comportamento do loadList
+  markAsDone(event, id: number) {
+
+    this.store.dispatch(fromListAction.toggleDone({id, checked: event.target.checked}));
   }
 }

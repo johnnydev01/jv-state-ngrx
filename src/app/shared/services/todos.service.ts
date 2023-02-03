@@ -15,12 +15,13 @@ export class TodosService {
       .pipe(delay(2000));
   }
 
-  toggleDone(id: number): Observable<Todo> {
+  toggleDone(id: number, checked: boolean): Observable<Todo> {
     let todo: Todo;
     getEntities().forEach(item => {
+
       if (item.id === id) {
-        todo = item;
-        item.done = !item.done;
+        todo = {...item};
+        todo.done = checked;
       }
     });
     return !!todo ? of(todo).pipe(delay(2000)) : throwError(`Todo com id: ${ id } não existe.`);

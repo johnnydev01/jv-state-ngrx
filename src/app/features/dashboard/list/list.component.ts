@@ -32,6 +32,7 @@ export class ListComponent implements OnInit {
     this.loading$ = this.store.pipe(select(fromListSelectors.selectListLoading));
     this.loadingMore$ = this.store.pipe(select(fromListSelectors.selectListLoadingMore));
 
+    //Neste trexo é combinado dois seletores através do combineLatest
     this.shouldShowLoadingIndicator$ = combineLatest([
         this.loading$,
         this.loadingMore$
@@ -41,8 +42,10 @@ export class ListComponent implements OnInit {
       );
   }
 
-  markAsDone(id: number) {
-    
+  markAsDone(event) {
+    const id = event.id;
+    const checked = event.checked;
+    this.store.dispatch(fromListAction.toggleDone({id, checked}))
   }
 
   onDelete(id: number) {

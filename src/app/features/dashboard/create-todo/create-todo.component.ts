@@ -30,6 +30,8 @@ export class CreateTodoComponent implements OnInit, OnDestroy {
 
     this.creating$
       .pipe(
+        //agrupa em pares o último estado e o novo estado toda vez que um novo
+        //valor é emitido
         pairwise(),
         takeUntil(this.componentDestroyed$),
       )

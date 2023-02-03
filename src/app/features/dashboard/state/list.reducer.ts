@@ -81,6 +81,14 @@ export const reducer = createReducer(
     ...state,
     removing: false,
   })),
+  on(fromListActions.toggleDoneSuccess, (state, {todo}) => ({
+    ...state,
+    entities: state.entities.map(item => item.id === todo?.id ? todo : item),
+  })),
+  on(fromListActions.toggleDoneFailure, (state) => ({
+    ...state,
+  })),
+
 );
 
 export function listReducer(state: ListState | undefined, action: Action): ListState {

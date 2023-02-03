@@ -54,3 +54,17 @@ export const removeTodoSuccess = createAction(
 export const removeTodoFailure = createAction(
   '[List] Remove Todo Failure',
 );
+
+export const toggleDone = createAction(
+  '[Toggle Todo] Mark todo',
+  props<{id: number, checked: boolean}>(),
+);
+
+export const toggleDoneSuccess = createAction(
+  '[API Todo] Mark todo Success',
+  props<{todo: Todo}>(),
+);
+
+export const toggleDoneFailure = createAction(
+  '[API Todo] Mark todo Failure',
+)

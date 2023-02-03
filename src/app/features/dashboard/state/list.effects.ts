@@ -61,6 +61,19 @@ export class ListEffects {
     ),
   );
 
+  toggleDone$ = createEffect(() => this.actions$
+  .pipe(
+    ofType(fromListActions.toggleDone),
+    mergeMap(({ id, checked }) => this.todosService.toggleDone(id, checked)
+      .pipe(
+        map(todo => fromListActions.toggleDoneSuccess({todo})),
+        catchError(() => of(fromListActions.toggleDoneFailure())),
+      ),
+    ),
+  ),
+);
+
+
   constructor(private actions$: Actions,
               private store: Store<AppState>,
               private todosService: TodosService) {

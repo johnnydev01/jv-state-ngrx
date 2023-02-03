@@ -22,6 +22,7 @@ import { AppEffects } from './state/app.effects';
     HttpClientModule,
     AppRoutingModule,
     LoginModule,
+    //Aqui o store module espera receber um action reducer map( chave valor)
     StoreModule.forRoot({ userContext: reducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([AppEffects]),

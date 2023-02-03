@@ -5,8 +5,8 @@
 
   <div class="actions">
     <div class="first-column">
-      <div class="checkbox" (click)="markAsDone.emit(item.id)">
-        <input type="checkbox" [checked]="item.done">
+      <div class="checkbox" >
+        <input type="checkbox" (change)="markAsDone.emit({id: item.id, checked: $event.target.checked})" [checked]="item.done">
         <label for="checkbox"><span>Feito</span></label>
       </div>
     </div>
